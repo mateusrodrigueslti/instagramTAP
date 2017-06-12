@@ -1,0 +1,23 @@
+<ion-view view-title="Login">
+    <ion-content class="padding">
+        <div class="col col-33 col-offset-33">
+            <img src="assets/img/logo-you.png" alt="" />
+        </div>
+        </div>
+        <div class="col">
+            <form>
+                <div class="list">
+                    <label class="item item-input item-floating-label">
+                  <span class="input-label">Username</span>
+                  <input type="text" placeholder="Username" ng-model="user" required>
+                </label>
+                    <label class="item item-input item-floating-label">
+                  <span class="input-label">Password</span>
+                  <input type="password" placeholder="Password" ng-model="password" required>
+                </label>
+                </div>
+                <button class="button button-block" ng-click="self.logar(user, password)">Entrar</button>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

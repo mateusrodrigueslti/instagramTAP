@@ -1,0 +1,15 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Nova publicação</h1>
+        <button class="button" ng-click="self.closeModaNewPost()">Fechar</button>
+    </ion-header-bar>
+    <ion-content>
+        <img src="{{img}}">
+        <div class="list">
+            <label class="item item-input">
+              <textarea placeholder="Comments" ng-model="status"></textarea>
+            </label>
+        </div>
+        <button class="button button-block button-positive" ng-click="post(img,status)">Publicar</button>
+    </ion-content>
+</ion-modal-view>

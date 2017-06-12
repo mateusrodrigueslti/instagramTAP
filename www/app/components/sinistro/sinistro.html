@@ -1,0 +1,13 @@
+<ion-view title="Sinistro">
+	<ion-content>
+    <button class="button button-block" ng-click="self.openCamera()">Camera</button>
+    <button class="button button-block" ng-click="self.todosOsContatos()">Contatos</button>
+
+		<ion-list>
+		  <ion-item ng-repeat="contato in self.contatos">
+		  	<h2>{{contato.displayName}}</h2>
+				<p ng-repeat="numero in contato.phoneNumbers">{{numero.value}}</p>
+		  </ion-item>
+		</ion-list>
+  </ion-content>
+</ion-view>

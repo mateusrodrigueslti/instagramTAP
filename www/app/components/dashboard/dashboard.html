@@ -1,0 +1,24 @@
+<ion-view view-title="Instagram">
+    <ion-content padding ng-init="self.allPosts()">
+        <div class="list card" ng-repeat="post in self.allPosts">
+            <div class="item item-avatar">
+                <img src="{{post.user.profile_image}}">
+                <h2 ng-bind="post.user.name"></h2>
+                <p ng-bind="post.createdAt | date: DD/MM/YYYY"></p>
+            </div>
+            <div class="item item-body">
+                <img class="full-image" src="{{post.post_picture}}">
+                <p ng-bind="post.status"></p>
+                <p>
+                    <a href="#" class="subdued">1 Like</a>
+                    <a class="subdued" ng-click="self.getPhoto()">5 Comments</a>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer" ng-click="self.getPhoto()">
+        <button class="button button-clear"></button>
+        <div class="title">Nova Publicação</div>
+        <button class="button button-clear"></button>
+    </div>
+</ion-view>
