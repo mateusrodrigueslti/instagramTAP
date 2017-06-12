@@ -1,0 +1,27 @@
+{
+  "name": "server_instagram_clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Caio Lucena",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "connect-multiparty": "^2.0.0",
+    "consign": "^0.1.2",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "express-session": "^1.15.2",
+    "express-validator": "^2.20.8",
+    "helmet": "^3.5.0",
+    "jsonwebtoken": "^7.3.0",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.5",
+    "mpromise": "^0.5.5"
+  }
+}
