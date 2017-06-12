@@ -14,7 +14,7 @@ module.exports.getPostFromUser = function(application, req, res) {
             res.status(400).json({ success: false });
             return;
         } else {
-            let PostModel = new application.app.models.PostModel(application);
+            let PostModel = new application.models.PostModel(application);
             PostModel.getPostFromUser(res, decoded._id);
         }
     });
@@ -28,7 +28,7 @@ module.exports.getPostFromUser = function(application, req, res) {
  * @param {Object} response
  */
 module.exports.getPostById = function(application, req, res) {
-    let PostModel = new application.app.models.PostModel(application);
+    let PostModel = new application.models.PostModel(application);
     PostModel.getPostById(application, req, res);
 }
 
@@ -47,7 +47,7 @@ module.exports.savePost = function(application, req, res) {
             res.status(400).json({ success: false });
             return;
         } else {
-            let PostModel = new application.app.models.PostModel(application);
+            let PostModel = new application.models.PostModel(application);
             let user = decoded._id;
             let dataToSend = {
                 post_picture: req.body.post_picture,
@@ -72,7 +72,7 @@ module.exports.deletePost = function(application, req, res) {
             res.status(400).json({ success: false });
             return;
         } else {
-            let PostModel = new application.app.models.PostModel(application);
+            let PostModel = new application.models.PostModel(application);
             let data = req.params.id;
             PostModel.deletePost(data, decoded._id, req, res);
         }

@@ -14,7 +14,7 @@ module.exports.addLike = function(application, req, res) {
             res.status(400).json({ success: false });
             return;
         } else {
-            let LikeModel = new application.app.models.LikeModel(application);
+            let LikeModel = new application.models.LikeModel(application);
             let post = req.params.id;
             let user = {
                 user: decoded._id
