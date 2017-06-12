@@ -1,34 +1,40 @@
-/* Empty. Add your own CSS if you like */
 .subheader-dashboard {
-  background: #f2f2f2;
-  text-align: center;
+    background: #f2f2f2;
+    text-align: center;
 }
+
 .cards-dashboard {
-  background: #f2f2f2;
-  height: 100px;
-  margin: 1%;
+    background: #f2f2f2;
+    height: 100px;
+    margin: 1%;
 }
 
-.cards-cartao-credito-veiculos{
-  border: 1px solid #e4e4e4;
-  border-radius: 10px;
-  margin-bottom: 10px
+.cards-cartao-credito-veiculos {
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    margin-bottom: 10px
 }
 
-.icones-subheader{
-  font-size: 25px;
+.icones-subheader {
+    font-size: 25px;
 }
 
-.icones-assistencias-dashboard{
-  font-size: 30px;
+.icones-assistencias-dashboard {
+    font-size: 30px;
 }
 
-.cards-dashboard-icones{
-  margin-left: 30%;
-  text-align: center;
-  margin-top: 12%;
+.cards-dashboard-icones {
+    margin-left: 30%;
+    text-align: center;
+    margin-top: 12%;
 }
-.nav-color{
-  background: #e4e4e4;
-  color: #4f4f4f;
+
+.nav-color {
+    background: #e4e4e4;
+    color: #4f4f4f;
+}
+
+.img-logo {
+    width: 100%;
+    height: auto;
 }

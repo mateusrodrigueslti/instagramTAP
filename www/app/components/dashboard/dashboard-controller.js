@@ -88,14 +88,25 @@ app.controller('DashboardController', function($scope, $state, $cordovaCamera, $
             post_picture: post_picture,
             status: status
         };
-
+        $ionicLoading.show({
+            template: 'Enviando...',
+            hideOnStateChange: true
+        }).then(function() {
+            console.log("The loading indicator is now displayed");
+        });
         DashboardServices.newPost(postObj)
             .then(
                 function(res) {
+                    $ionicLoading.hide().then(function() {
+                        console.log("The loading indicator is now hidden");
+                    });
                     $scope.allPosts();
                     $scope.closeModaNewPost();
                 },
                 function(err) {
+                    $ionicLoading.hide().then(function() {
+                        console.log("The loading indicator is now hidden");
+                    });
                     throw err;
                 });
     };

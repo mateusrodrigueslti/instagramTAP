@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Criar Usuário</h1>
+        <button class="button" ng-click="closeModaNewPost()">Fechar</button>
+    </ion-header-bar>
+    <ion-content>
+        <label class="item item-input">
+            <input type="text" placeholder="Nome" ng-model="objNovoUsuario.name">
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="objNovoUsuario.email">
+        </label>
+        <label class="item item-input">
+           <input type="text" placeholder="Username" ng-model="objNovoUsuario.username">
+        </label>
+        <label class="item item-input">
+           <input type="text" placeholder="Password" ng-model="objNovoUsuario.password">
+        </label>
+        <label class="item item-input">
+           <input type="text" placeholder="Imagem" ng-focus="getPhoto()">
+        </label>
+        <img src="{{img}}">
+        <button class="button button-block button-positive" ng-click="criarConta(objNovoUsuario)">Criar</button>
+    </ion-content>
+</ion-modal-view>

@@ -1,7 +1,9 @@
 // angular.module('YouApp.controllers', [])
 
-app.controller('LoginController', function($cordovaOauth, $state, $ionicHistory, $http, $ionicLoading, $ionicPopup) {
+app.controller('LoginController', function($cordovaCamera, $scope, $cordovaOauth, $state, $ionicHistory, $http, $ionicLoading, $ionicPopup, $ionicModal) {
     var self = this;
+
+    self.objNovoUsuario = {}
 
     self.logarFacebook = function() {
         $cordovaOauth.facebook('1191213624249171', ["email"]).then(_sucessoFacebook, _erroFacebook);
@@ -67,5 +69,54 @@ app.controller('LoginController', function($cordovaOauth, $state, $ionicHistory,
         });
         $state.go('app.dashboard');
     }
+
+    self.criar = function() {
+        self.modal.show();
+
+    }
+
+    $scope.criarConta = function(user) {
+        user.profile_image = $scope.img;
+        $http.post('https://fdb22325.ngrok.io/user', user)
+            .then(function(res) {
+                $scope.closeModaNewPost();
+            }, function(err) {
+                alert(err.data.msg);
+                throw err;
+            });
+    }
+    $scope.closeModaNewPost = function() {
+        self.modal.hide();
+    };
+
+    $ionicModal.fromTemplateUrl('app/components/login/modalNewUser.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        self.modal = modal;
+    });
+
+
+    $scope.getPhoto = function() {
+        var options = {
+            quality: 100,
+            destinationType: Camera.DestinationType.DATA_URL,
+            sourceType: 0,
+            allowEdit: true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 100,
+            targetHeight: 100,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false,
+            correctOrientation: true
+        };
+
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.img = 'data:image/jpeg;base64,' + imageData;
+            self.openModaNewPost();
+        }, function(err) {
+            throw err;
+        });
+    };
 
 });
