@@ -21,7 +21,7 @@ app.controller('LoginController', function($cordovaCamera, $scope, $cordovaOauth
         }).then(function() {
             console.log("The loading indicator is now displayed");
         });
-        $http.post('https://fdb22325.ngrok.io/authenticate', { username, password })
+        $http.post('https://tap-gram.herokuapp.com/authenticate', { username, password })
             .then(function(res) {
                 localStorage.setItem('user', JSON.stringify(res.data));
                 $ionicHistory.nextViewOptions({
@@ -77,7 +77,7 @@ app.controller('LoginController', function($cordovaCamera, $scope, $cordovaOauth
 
     $scope.criarConta = function(user) {
         user.profile_image = $scope.img;
-        $http.post('https://fdb22325.ngrok.io/user', user)
+        $http.post('https://tap-gram.herokuapp.com/user', user)
             .then(function(res) {
                 $scope.closeModaNewPost();
             }, function(err) {

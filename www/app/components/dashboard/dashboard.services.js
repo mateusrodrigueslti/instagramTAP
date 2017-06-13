@@ -7,10 +7,10 @@ appServices.service('DashboardServices', function($http, $rootScope) {
     };
 
     function _newPost(data) {
-        return $http.post('https://fdb22325.ngrok.io/api/post', data);
+        return $http.post('https://tap-gram.herokuapp.com/api/post', data);
     }
 
     function _allPosts(data) {
-        return $http.get('https://fdb22325.ngrok.io/api/post', data);
+        return $http.get('https://tap-gram.herokuapp.com/api/post', data);
     }
 });

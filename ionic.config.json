@@ -1,5 +1,8 @@
 {
   "name": "Instagram",
   "app_id": "df529418",
-  "type": "ionic1"
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
 }
